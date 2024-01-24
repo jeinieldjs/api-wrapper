@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get '/random', to: 'random#index'
     get '/categories', to: 'categories#index'
     get '/health', to: 'health#index'
+    get '/entries/:category', to: 'entries#filter_by_category'
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

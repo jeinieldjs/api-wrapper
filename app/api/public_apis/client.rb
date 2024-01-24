@@ -7,15 +7,19 @@ module PublicApis
         end
         
         def self.random
-            response = Request.call(http_method: 'get', endpoint: "random" )
+            response = Request.call(http_method: 'get', endpoint: 'random' )
         end
 
         def self.categories
-            response = Request.call(http_method: 'get', endpoint: "categories" )
+            response = Request.call(http_method: 'get', endpoint: 'categories' )
         end
 
         def self.health
-            response = Request.call(http_method: 'get', endpoint: "health" )
+            response = Request.call(http_method: 'get', endpoint: 'health' )
+        end
+
+        def self.entries_by_category(category)
+            response = Request.call(http_method: 'get', endpoint: "entries?category=#{category}")
         end
     end
 end
