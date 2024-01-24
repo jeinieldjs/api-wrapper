@@ -39,7 +39,7 @@ Built through Rails, this is an API wrapper designed to fetch data cataloged on 
     =>
     {:code=>200, :status=>"Success", :data=>{"alive"=>true}}
     ```
-* **GET /entries?category={category}**
+* **GET /entries/:category**
   - To get all entries under the same category
   - **Note:** For categories which have a space and an ampersand, use the first word as the query (ex. "Science & Math => 'science')
   - **Example Response:**
