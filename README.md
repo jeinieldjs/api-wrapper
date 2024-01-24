@@ -3,11 +3,11 @@
 Built through Rails, this is an API wrapper designed to fetch data cataloged on [Public APIs](https://api.publicapis.org/). This project aims to simplify the integration of Public APIs into the development of Ruby applications.
 
 **Note:** This wrapper utilizes the [rest-client](https://github.com/rest-client/rest-client) gem for making HTTP requests and interacting with the Public APIs.
-## Available endpoints
+## Endpoints used
 
 * **GET /entries**
   - To get a list of all public API entries from the third-party API
-
+    
 * **GET /random**
   - To get a single public API entry at random
   - **Example Response:**
@@ -39,7 +39,34 @@ Built through Rails, this is an API wrapper designed to fetch data cataloged on 
     =>
     {:code=>200, :status=>"Success", :data=>{"alive"=>true}}
     ```
-
+* **GET /entries/:category**
+  - To get all entries under the same category
+  - **Note:** For categories which have a space and an ampersand, use the first word as the query (ex. "Science & Math => 'science')
+  - **Example Response:**
+    ```irb
+    irb(main):001> PublicApis::Client.entries_by_category('vehicle')
+    =>
+    {:code=>200,
+     :status=>"Success",
+     :data=>
+      {"count"=>6,
+       "entries"=>
+        [{"API"=>"Brazilian Vehicles and Prices",
+          "Description"=>"Vehicles information from Fundação Instituto de Pesquisas Econômicas - Fipe",
+          "Auth"=>"",
+          "HTTPS"=>true,
+          "Cors"=>"no",
+          "Link"=>"https://deividfortuna.github.io/fipe/",
+          "Category"=>"Vehicle"},
+         {"API"=>"Helipaddy sites",
+          "Description"=>"Helicopter and passenger drone landing site directory, Helipaddy data and much more",
+          "Auth"=>"apiKey",
+          "HTTPS"=>true,
+          "Cors"=>"unknown",
+          "Link"=>"https://helipaddy.com/api/",
+          "Category"=>"Vehicle"},
+  
+        ```
 
 ## Documentation
   For more information about methods and parameters available, you may refer to the following: 
