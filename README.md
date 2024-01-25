@@ -103,5 +103,5 @@ Built through Rails, this is an API wrapper designed to fetch data cataloged on 
   For more information about methods and parameters available, you may refer to the following: 
 
 - **Github Project:** [https://github.com/davemachado/public-api](https://github.com/davemachado/public-api)
-- **Base URL:** [https://api.publicapis.org/](https://api.publicapis.org/)
+- **Public APIs Documentation:** [https://api.publicapis.org/](https://api.publicapis.org/)
 
