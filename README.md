@@ -70,7 +70,7 @@ Built through Rails, this is an API wrapper designed to fetch data cataloged on 
       ]}
     ```
 
-* **GET /supports_https**
+* **GET /supports-https**
   - To get all APIs that support HTTPS
   - **Sample Response:**
     ```irb
