@@ -2,7 +2,7 @@
 
 Built through Rails, this is an API wrapper designed to fetch data cataloged on [Public APIs](https://api.publicapis.org/). This project aims to simplify the integration of Public APIs into the development of Ruby applications.
 
-**Note:** This wrapper utilizes the [rest-client](https://github.com/rest-client/rest-client) gem for making HTTP requests and interacting with the Public APIs.
+**Note:** This wrapper utilizes the [rest-client](https://github.com/rest-client/rest-client) gem for making HTTP requests and interacting with Public APIs.
 ## Endpoints used
 
 * **GET /entries**
