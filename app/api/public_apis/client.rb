@@ -21,5 +21,9 @@ module PublicApis
         def self.entries_by_category(category)
             response = Request.call(http_method: 'get', endpoint: "entries?category=#{category}")
         end
+
+        def self.supports_https
+            response = Request.call(http_method: 'get', endpoint: "entries?https=true")
+        end
     end
 end

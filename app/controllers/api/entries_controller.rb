@@ -9,4 +9,10 @@ class Api::EntriesController < ApplicationController
         response = PublicApis::Client.entries_by_category(category)
         render json: response
     end
+
+    def supports_https
+        response = PublicApis::Client.supports_https
+        render json: response
+    end
+
 end
