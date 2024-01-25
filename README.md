@@ -10,7 +10,7 @@ Built through Rails, this is an API wrapper designed to fetch data cataloged on 
     
 * **GET /random**
   - To get a single public API entry at random
-  - **Example Response:**
+  - **Sample Response:**
     ```irb
     irb(main):001> PublicApis::Client.random
     =>
@@ -33,16 +33,17 @@ Built through Rails, this is an API wrapper designed to fetch data cataloged on 
 
 * **GET /health**
   - To check the health status of the API
-  - **Example Response:**
+  - **Sample Response:**
     ```irb
     irb(main):002> PublicApis::Client.health
     =>
     {:code=>200, :status=>"Success", :data=>{"alive"=>true}}
     ```
+
 * **GET /entries/:category**
   - To get all entries under the same category
   - **Note:** For categories which have a space and an ampersand, use the first word as the query (ex. "Science & Math => 'science')
-  - **Example Response:**
+  - **Sample Response:**
     ```irb
     irb(main):001> PublicApis::Client.entries_by_category('vehicle')
     =>
@@ -65,8 +66,38 @@ Built through Rails, this is an API wrapper designed to fetch data cataloged on 
           "Cors"=>"unknown",
           "Link"=>"https://helipaddy.com/api/",
           "Category"=>"Vehicle"},
-  
-        ```
+        ...
+      ]}
+    ```
+
+* **GET /supports_https**
+  - To get all APIs that support HTTPS
+  - **Sample Response:**
+    ```irb
+    irb(main):001> PublicApis::Client.supports_https
+    =>
+    {:code=>200,
+     :status=>"Success",
+     :data=>
+      {"count"=>1335,
+       "entries"=>
+        [{"API"=>"AdoptAPet",
+          "Description"=>"Resource to help get pets adopted",
+          "Auth"=>"apiKey",
+          "HTTPS"=>true,
+          "Cors"=>"yes",
+          "Link"=>"https://www.adoptapet.com/public/apis/pet_list.html",
+          "Category"=>"Animals"},
+         {"API"=>"Axolotl",
+          "Description"=>"Collection of axolotl pictures and facts",
+          "Auth"=>"",
+          "HTTPS"=>true,
+          "Cors"=>"no",
+          "Link"=>"https://theaxolotlapi.netlify.app/",
+          "Category"=>"Animals"},
+        ...
+      ]}
+    ```
 
 ## Documentation
   For more information about methods and parameters available, you may refer to the following: 
