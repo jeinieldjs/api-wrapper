@@ -98,7 +98,32 @@ Built through Rails, this is an API wrapper designed to fetch data cataloged on 
         ...
       ]}
     ```
-
+* **GET /entries/title/:title**
+  - To get all entries whose titles contain a specified substring.
+  - **Sample Response:**
+    ```irb
+    irb(main):014> PublicApis::Client.entries_by_title('iex')
+    =>
+    {:code=>200,
+    :status=>"Success",
+    :data=>
+      {"count"=>2,
+        "entries"=>
+          [{"API"=>"Poloniex",
+            "Description"=>"US based digital asset exchange",
+            "Auth"=>"apiKey",
+            "HTTPS"=>true,
+            "Cors"=>"unknown",
+            "Link"=>"https://docs.poloniex.com",
+            "Category"=>"Cryptocurrency"},
+           {"API"=>"IEX Cloud",
+            "Description"=>"Realtime & Historical Stock and Market Data",
+            "Auth"=>"apiKey",
+            "HTTPS"=>true,
+            "Cors"=>"yes",
+            "Link"=>"https://iexcloud.io/docs/api/",
+            "Category"=>"Finance"}]}}
+    ```
 ## Documentation
   For more information about methods and parameters available, you may refer to the following: 
 
