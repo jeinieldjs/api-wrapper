@@ -22,4 +22,10 @@ class Api::EntriesControllerTest < ActionDispatch::IntegrationTest
     assert_not_empty JSON.parse(response.body)['data']
   end
 
+  test 'should get entries by title' do
+    get api_filter_by_title_path(title: 'art')
+    assert_response :success
+    assert_not_empty JSON.parse(response.body)['data']
+  end
+
 end

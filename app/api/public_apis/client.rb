@@ -25,5 +25,9 @@ module PublicApis
         def self.supports_https
             response = Request.call(http_method: 'get', endpoint: "entries?https=true")
         end
+
+        def self.entries_by_title(title)
+            response = Request.call(http_method: 'get', endpoint: "entries?title=#{title}")
+        end
     end
 end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get '/health', to: 'health#index'
     get '/entries/:category', to: 'entries#filter_by_category'
     get '/supports-https', to: 'entries#supports_https'
+    get '/entries/title/:title', to: 'entries#filter_by_title',  as: 'filter_by_title'
   end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

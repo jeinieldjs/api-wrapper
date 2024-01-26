@@ -15,4 +15,10 @@ class Api::EntriesController < ApplicationController
         render json: response
     end
 
+    def filter_by_title
+        title = params[:title]
+        response = PublicApis::Client.entries_by_title(title)
+        render json: response
+    end
+
 end
